@@ -1,8 +1,10 @@
 .categories {
-  padding-left: 200px;
+ // padding-left: 200px;
+ //padding-left: 250px;
   display: flex;
   flex-wrap: wrap; /* Allow items to wrap onto multiple lines */
-  margin: 20px; /* Add some margin around the category section */
+ margin: 20px; /* Add some margin around the category section */
+ justify-content: center;
 }
 
 .categories-container {
@@ -89,8 +91,58 @@ h3 {
 }
 
 /* Responsive adjustments */
+// @media (max-width: 768px) {
+//   .category1, .category2, .category3, .category4 {
+//       flex: 0 0 100%; /* Make each category full width on small screens */
+//   }
+// }
+
+/* Responsive adjustments */
+// @media (max-width: 768px) {
+//   .category1, .category2, .category3, .category4 {
+//       flex: 0 0 100%; /* Make each category full width on small screens */
+//   }
+// }
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .category1, .category2, .category3, .category4 {
+    display: flex;/* On larger tablets and small laptops, each category takes 48% width */
+   
+  }
+ 
+}
+
+@media (max-width: 992px) {
+  .category1, .category2, .category3, .category4 {
+    flex: 0 0 48%; /* Still 48% for medium-sized tablets */
+   
+  }
+  
+}
+
 @media (max-width: 768px) {
   .category1, .category2, .category3, .category4 {
-      flex: 0 0 100%; /* Make each category full width on small screens */
+    flex: 0 0 100%; /* Make each category full width on small screens */
+  }
+
+  .overlay {
+    padding: 5px; /* Adjust padding for smaller screens */
+  }
+
+  .shop-now {
+    padding: 6px 12px; /* Adjust button size for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .overlay {
+    padding: 3px; /* Even less padding on very small screens */
+    
+  }
+
+  .shop-now {
+    padding: 4px 8px; /* Even smaller button size */
+   
   }
 }

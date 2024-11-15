@@ -1,6 +1,12 @@
+/* General Footer Styling */
 footer h6 {
   font-weight: bold;
   margin-bottom: 15px;
+}
+
+.bottom {
+  padding-bottom: 200px;
+  // font-size: x-large;
 }
 
 footer ul {
@@ -25,67 +31,32 @@ footer hr {
   border-color: #eaeaea;
 }
 
-@media (min-width: 992px) { /* Large screens */
-  footer .row {
-      justify-content: space-around; /* Even spacing between columns */
-  }
-  footer .row > div {
-      text-align: left;
-
-      // top: ;
-  }
-}
-
 .bg-light.py-4 {
   background-color: #a4de85 !important;
+  // height: 100%;
 }
 
 .nav1 {
-  // background-color: #a4de85;
   display: flex;
+  flex-direction: column;
   padding: 20px;
 }
 
-.div1 {
-  padding-left: 15px;
-  padding-top: 20px;
+/* Footer Container Styling */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  // margin: 0 auto;
 }
 
-.div1 p {
-  font-size: 15px;
+.social-icons a i {
+  color: #333;
+  font-size: 1.5rem;
+  margin: 0 10px;
+  text-decoration: none;
 }
 
-a i {
-  color: #333;            /* Default icon color */
-  font-size: 1.5rem;      /* Icon size */
-  margin: 0 10px;         /* Space between icons */
-  text-decoration: none;  /* Remove underline */
-}
-
-.symbol {
-  padding: 0;
-  display: flex;
-}
-
-.col-lg-2 {
-  padding-left: 120px;
-  padding-top: 20px;
-}
-
-.icons {
-  padding: 0;
-  padding-top: 0;
-  margin-left: 0;
-  display: inline;
-}
-
-.col-lg-3 {
-  margin-top: 25px;
-  // padding-left: 50px;
-  padding-left: 125px;
-
-}
-
+/* Image Overlay Styling */
 .image-overlay-container {
   position: relative;
   width: 100%;
@@ -94,46 +65,84 @@ a i {
 
 .image-overlay-container img {
   width: 100%;
-  height: 500px; /* Set a specific height, adjust as needed */
-  // object-fit: cover; /* Ensures the image covers the area without distortion */
+  height: 500px; /* Responsive height */
 }
-
 
 .overlay-text {
   position: absolute;
-  bottom:0%;
-  right: 0%;
-  transform: translate(-50%, -50%);
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
   text-align: center;
-  color: #fff; /* Text color */
+  color: #fff;
+  width: 100%;
 }
 
-.overlay-text h1 {
+.overlay-text h1, .overlay-text p {
   color: blanchedalmond;
-  font-size: 2em;
   margin: 0;
 }
-.overlay-text{
-  margin-right: -185px;
-  margin-bottom: -20px;
-}
-.overlay-text p {
-  color: blanchedalmond;
-  font-size: 1.2em;
-  margin-top: 10px;
+
+.btn {
+  background-color: rgb(79, 79, 161);
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.bottom-right-text {
-  position: absolute;
-  bottom: 10px; /* Adjust as necessary */
-  right: 10px; /* Adjust as necessary */
-  color: #fff; /* Text color */
-  font-size: 1.2em; /* Font size */
-  background: rgba(0, 0, 0, 0.5); /* Optional: add background for better readability */
-  padding: 5px; /* Optional: add some padding */
-  border-radius: 5px; /* Optional: round the corners */
+/* Responsive Breakpoints */
+
+/* Large screens (992px and up) */
+@media (min-width: 992px) {
+  .nav1 {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  footer .row > div {
+    text-align: left;
+  }
+  img{
+    height: 50%;
+  }
+ 
 }
 
-.btn{
-  background-color:rgb(79, 79, 161);
+/* Tablets (576px - 991px) */
+@media (min-width: 576px) and (max-width: 991px) {
+  .overlay-text h1 {
+    font-size: 1.8em;
+  }
+  .overlay-text p {
+    font-size: 1em;
+  }
+  .social-icons {
+    text-align: center;
+    margin-top: 15px;
+  }
+}
+
+/* Mobile Devices (up to 575px) */
+@media (max-width: 575px) {
+  .overlay-text h1 {
+    font-size: 1.5em;
+  }
+  .overlay-text p {
+    font-size: 0.9em;
+  }
+  .social-icons a i {
+    font-size: 1.3rem;
+    margin: 0 5px;
+  }
+  .footer .row > div {
+    padding-bottom: 20px;
+  }
+  footer .nav1 {
+    flex-direction: column;
+    text-align: center;
+  }
+  .col-lg-2, .col-lg-3 {
+    padding: 0;
+  }
 }
